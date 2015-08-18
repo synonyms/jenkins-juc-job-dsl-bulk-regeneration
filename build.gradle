@@ -13,9 +13,12 @@ repositories {
 
 // In this section you declare the dependencies for your production and test code
 dependencies {
-    compile 'org.jenkins-ci.plugins:job-dsl-core:1.26'
-    compile  'org.jenkins-ci.main:jenkins-core:1.583'
+    compile 'org.jenkins-ci.plugins:job-dsl-core:1.37'
+    compile 'org.jenkins-ci.main:jenkins-core:1.624'
     compile 'javax.servlet:servlet-api:2.5'
+	compile 'org.kohsuke:github-api:1.70'
+	compile 'com.offbytwo.jenkins:jenkins-client:0.3.0'
+
 
 }
 
@@ -34,7 +37,7 @@ sourceSets{
 
 ext {
     exampleJobDSLDir= file("${projectDir}/src/examples/jobdsl")
-    exampleJobDSLFiles=fileTree(dir:exampleJobDSLDir , include: '*.jobDSL')
+    exampleJobDSLFiles=fileTree(dir:exampleJobDSLDir , include: '*.groovy')
     generatorJobDSLDir= file("${projectDir}/src/generator/jobdsl")
     generatorJobDSLFiles=fileTree(dir:generatorJobDSLDir , include: '*.jobDSL')
     regenerateJobDSLDir= file("${projectDir}/src/regenerate/jobdsl")
